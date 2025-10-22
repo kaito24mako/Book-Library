@@ -33,3 +33,31 @@ button, input, textarea, select, a {
 button {
     cursor: pointer;
 }
+
+/* ==== CUSTOM PROPERTIES ==== */
+:root {
+    --color-general: rgb(224, 224, 224);
+    
+    --font-dancing: "Dancing Script", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-merri: "Merriweather", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-playfair: "Playfair Display", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    
+    --size-header: clamp(1.5rem, 2vw, 2rem);
+    --size-vlarge: clamp(1.3rem, 1.5vw, 1.6rem);
+    --size-large: clamp(1.1rem, 1.3vw, 1.4rem);
+    --size-medium: clamp(1rem, 1.1vw, 1.2rem);
+    --size-small: clamp(0.9rem, 1vw, 1.1rem);
+    --size-vsmall: clamp(0.8rem, 0.9vw, 1rem);
+}
+
+/* ==== GENERAL ==== */
+
+body {
+    background-image: url("./images/shelf.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+
+    color: var(--color-general);
+}
