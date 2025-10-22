@@ -35,6 +35,7 @@ button {
 }
 
 /* ==== CUSTOM PROPERTIES ==== */
+
 :root {
     --color-general: rgb(224, 224, 224);
     
@@ -42,12 +43,18 @@ button {
     --font-merri: "Merriweather", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
     --font-playfair: "Playfair Display", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
     
-    --size-header: clamp(1.5rem, 2vw, 2rem);
+    --size-header: clamp(2.5rem, 4vw, 4.5rem);
     --size-vlarge: clamp(1.3rem, 1.5vw, 1.6rem);
     --size-large: clamp(1.1rem, 1.3vw, 1.4rem);
     --size-medium: clamp(1rem, 1.1vw, 1.2rem);
     --size-small: clamp(0.9rem, 1vw, 1.1rem);
     --size-vsmall: clamp(0.8rem, 0.9vw, 1rem);
+
+    --spacing-vlarge: 10em;
+    --spacing-large: 2.5em;
+    --spacing-medium: 2em;
+    --spacing-small: 1.5em;
+    --spacing-vsmall: 0.5em;
 }
 
 /* ==== GENERAL ==== */
@@ -61,3 +68,24 @@ body {
 
     color: var(--color-general);
 }
+
+/* ==== HEADER ==== */
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: var(--spacing-large) 0;
+    padding: var(--spacing-medium);
+
+    gap: var(--spacing-vlarge);
+
+    background-color: rgba(0, 0, 0, 0.35);
+}
+.header-container > h1 {
+    font-family: var(--font-dancing);
+    font-size: var(--size-header);
+    font-style: italic;
+}
+
