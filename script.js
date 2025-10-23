@@ -65,3 +65,17 @@ function getBook(array) {
 getBook(myLibrary);
 
 /* Create and display new books */
+
+const dialog = document.querySelector("dialog");
+const createBookButton = document.querySelector(".header-container button");
+const closeDialogButton = document.querySelector("dialog > button");
+
+createBookButton.addEventListener("click", () => {
+    /* shows the dialog */
+    dialog.showModal();
+});
+
+closeDialogButton.addEventListener("click", () => {
+    dialog.close();
+});
+

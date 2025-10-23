@@ -209,4 +209,6 @@ main {
     flex-direction: column;
 }
 
-
+dialog::backdrop {
+    opacity: 0.6;
+}
