@@ -51,10 +51,10 @@ button {
     
     --size-header: clamp(2.5rem, 4vw, 4.5rem);
     --size-vlarge: clamp(1.3rem, 1.5vw, 1.6rem);
-    --size-large: clamp(1.1rem, 1.3vw, 1.4rem);
+    --size-large: clamp(1.3rem, 1.3vw, 1.4rem);
     --size-medium: clamp(1rem, 1.1vw, 1.2rem);
-    --size-small: clamp(0.9rem, 1vw, 1.1rem);
-    --size-vsmall: 0.85rem;
+    --size-small: clamp(0.9rem, 1vw, 1rem);
+    --size-vsmall: clamp(0.8rem, 0.8vw, 0.8rem);
 
     --spacing-vlarge: 10em;
     --spacing-large: 2.5em;
@@ -153,6 +153,9 @@ main {
 .card-text > h2 {
     font-size: var(--size-large);
 }
+.card-text p {
+    font-size: var(--size-small);
+}
 .card-text p:nth-of-type(1) {
     opacity: 0.7;
 }
@@ -161,11 +164,11 @@ main {
     display: flex;
 
     gap: var(--spacing-medium);
-
-    font-size: var(--size-vsmall);
 }
 .card-buttons > button {
     padding: var(--spacing-vsmall);
+
+    font-size: var(--size-vsmall);
 
     background-color: var(--color-transBlack);
     border: none;
