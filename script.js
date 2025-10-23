@@ -1,3 +1,5 @@
+/* Book constructor */
+
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -8,6 +10,8 @@ function Book(title, author, pages, read) {
     this.id = crypto.randomUUID();
 }
 
+/* Add new books to the library array */
+
 function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
@@ -15,8 +19,8 @@ function addBookToLibrary(title, author, pages, read) {
 
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", "Not read yet");
 addBookToLibrary("1984", "George Orwell", "182", "Read");
-console.log(myLibrary);
 
+/* Display books */
 
 const cardContainer = document.querySelector(".card-container");
 
@@ -59,3 +63,5 @@ function getBook(array) {
 }
 
 getBook(myLibrary);
+
+/* Create and display new books */
