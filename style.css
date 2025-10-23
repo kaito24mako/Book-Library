@@ -188,3 +188,25 @@ main {
     color: var(--color-hoverBrown);
 }
 
+/* ==== NEW BOOK FORM ==== */
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 400px;
+
+    padding: var(--spacing-vmedium);
+    margin: 0 auto;
+
+    background-color: var(--color-lightBlack);
+    border-radius: 10px;
+    gap: var(--spacing-vmedium);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+
