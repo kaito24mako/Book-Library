@@ -2,9 +2,9 @@ const myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+    this.author = `By ${author}`;
+    this.pages = `${pages} pages`;
+    this.read = `Status: ${read}`;
     this.id = crypto.randomUUID();
 }
 
@@ -13,14 +13,14 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 }
 
-addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", "not read yet");
-addBookToLibrary("1984", "George Orwell", "182", "read");
+addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", "Not read yet");
+addBookToLibrary("1984", "George Orwell", "182", "Read");
 console.log(myLibrary);
 
 
 const cardContainer = document.querySelector(".card-container");
 
-function getBook() {
+function getBook(array) {
     for (let i = 0; i < myLibrary.length; i++) {
 
         const newCard = document.createElement("div");
@@ -35,7 +35,15 @@ function getBook() {
         const authorText = document.createElement("p");
         const pagesText = document.createElement("p");
         const readText = document.createElement("p");
-        textGroup.appendChild(titleText, authorText, pagesText, readText);
+        titleText.textContent = array[i].title;
+        authorText.textContent = array[i].author;
+        pagesText.textContent = array[i].pages;
+        readText.textContent = array[i].read;
+        textGroup.appendChild(titleText);
+        textGroup.appendChild(authorText);
+        textGroup.appendChild(pagesText);
+        textGroup.appendChild(readText);
+        
 
         const buttonsGroup = document.createElement("div");
         buttonsGroup.classList.add("card-buttons");
@@ -43,6 +51,11 @@ function getBook() {
 
         const statusButton = document.createElement("button");
         const removeButton = document.createElement("button");
-        buttonsGroup.appendChild(statusButton, removeButton);
+        statusButton.textContent = "Change Read Status";
+        removeButton.textContent = "Remove Book";
+        buttonsGroup.appendChild(statusButton);
+        buttonsGroup.appendChild(removeButton);
     }
 }
+
+getBook(myLibrary);
