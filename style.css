@@ -54,6 +54,7 @@ button {
 
     --spacing-vlarge: 10em;
     --spacing-large: 2.5em;
+    --spacing-vmedium: 2em;
     --spacing-medium: 1em;
     --spacing-small: 0.5em;
     --spacing-vsmall: 0.3em;
@@ -121,10 +122,14 @@ body {
     width: 100%;
     aspect-ratio: 1 / 1;
 
-    border: 1px solid blue;
+    padding: var(--spacing-vmedium);
+
+    background-color: rgba(44, 44, 44, 0.97);
+    border-radius: 2px 20px 20px 2px;
 }
 
 /* ==== FOOTER ==== */
+
 .footer-container {
     display: flex;
     justify-content: center;
