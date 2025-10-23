@@ -38,6 +38,8 @@ button {
 
 :root {
     --color-general: rgb(224, 224, 224);
+    --color-transBlack: rgba(0, 0, 0, 0.35); 
+    --color-brown: #443429;
     
     --font-dancing: "Dancing Script", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
     --font-merri: "Merriweather", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -52,9 +54,9 @@ button {
 
     --spacing-vlarge: 10em;
     --spacing-large: 2.5em;
-    --spacing-medium: 2em;
-    --spacing-small: 1.5em;
-    --spacing-vsmall: 0.5em;
+    --spacing-medium: 1em;
+    --spacing-small: 0.5em;
+    --spacing-vsmall: 0.3em;
 }
 
 /* ==== GENERAL ==== */
@@ -81,11 +83,27 @@ body {
 
     gap: var(--spacing-vlarge);
 
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: var(--color-transBlack);
 }
 .header-container > h1 {
     font-family: var(--font-dancing);
     font-size: var(--size-header);
     font-style: italic;
 }
+.header-container > button {
+    padding: var(--spacing-small);
+
+    font-family: var(--font-merri);
+    font-size: var(--size-medium);
+
+    background-color: var(--color-brown);
+    border: 1px solid var(--color-transBlack);
+    border-radius: 5px;
+
+    transition: 0.1s ease;
+}
+.header-container > button:hover {
+    background-color: #523d30
+}
+
 
