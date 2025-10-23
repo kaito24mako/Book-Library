@@ -181,4 +181,7 @@ main {
     margin: 0 auto;
     margin-bottom: var(--spacing-large);
 }
+.footer-container a:hover {
+    color: var(--color-hoverBrown);
+}
 
