@@ -171,6 +171,7 @@ main {
 .card-buttons > button {
     padding: var(--spacing-vsmall);
 
+    font-family: var(--font-merri);
     font-size: var(--size-vsmall);
 
     background-color: var(--color-transBlack);
@@ -273,6 +274,8 @@ dialog::backdrop {
 
     border: 2px solid var(--color-transWhite);
     border-radius: 5px;
+
+    transition: 0.1s ease;
 }
 .form-container button:last-child:hover {
     background-color: var(--color-hoverBlack);
