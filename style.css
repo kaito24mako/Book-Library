@@ -44,6 +44,7 @@ button {
     --color-transGrey: rgba(44, 44, 44, 0.99);
     --color-brown: #443429;
     --color-hoverBrown: #523d30;
+    --color-transWhite: rgba(255, 255, 255, 0.15);
     
     --font-dancing: "Dancing Script", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
     --font-merri: "Merriweather", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -198,10 +199,11 @@ main {
 
     padding: var(--spacing-vmedium);
     margin: 0 auto;
+    gap: var(--spacing-vmedium);
 
     background-color: var(--color-lightBlack);
     border-radius: 10px;
-    gap: var(--spacing-vmedium);
+    color: var(--color-hoverBrown);
 }
 
 .input-group {
@@ -209,6 +211,18 @@ main {
     flex-direction: column;
 }
 
-dialog::backdrop {
-    opacity: 0.6;
+dialog {
+    border: none;
+    background: transparent;
 }
+dialog::backdrop {
+    background-color: var(--color-transWhite);
+}
+dialog button:first-child {
+    display: flex;
+    justify-content: flex-end;
+
+    border: none;
+}
+
+
