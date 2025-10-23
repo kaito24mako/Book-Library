@@ -16,54 +16,6 @@
     </header>
 
     <main class="card-container">
-        <!-- <div class="card">
-            <div class="card-text">
-                <h2>Title</h2>
-                <p>Author</p>
-                <p>Pages</p>
-                <p>Status</p>
-            </div>
-            <div class="card-buttons">
-                <button>Change Read Status</button>
-                <button>Remove Book</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-text">
-                <h2>Title</h2>
-                <p>Author</p>
-                <p>Pages</p>
-                <p>Status</p>
-            </div>
-            <div class="card-buttons">
-                <button>Change Read Status</button>
-                <button>Remove Book</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-text">
-                <h2>Title</h2>
-                <p>Author</p>
-                <p>Pages</p>
-                <p>Status</p>
-            </div>
-            <div class="card-buttons">
-                <button>Change Read Status</button>
-                <button>Remove Book</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-text">
-                <h2>Title</h2>
-                <p>Author</p>
-                <p>Pages</p>
-                <p>Status</p>
-            </div>
-            <div class="card-buttons">
-                <button>Change Read Status</button>
-                <button>Remove Book</button>
-            </div>
-        </div> -->
     </main>
 
     <dialog>
@@ -86,17 +38,25 @@
             </div>
 
             <fieldset class="status-container">
-                <legend>Finished Reading</legend>
+                <div class="status-flex-group">
 
-                <label for="yes-read">
-                    <input type="radio" id="yes-read" name="read-status" value="yes">
-                    Yes
-                </label>
+                    <legend>Finished Reading</legend>
 
-                <label for="no-read">
-                    <input type="radio" id="no-read" name="read-status" value="no">
-                    No
-                </label>
+                    <div class="options-flex-group">
+
+                        <label for="yes-read">
+                            <input type="radio" id="yes-read" name="read-status" value="yes">
+                            Yes
+                        </label>
+
+                        <label for="no-read">
+                            <input type="radio" id="no-read" name="read-status" value="no">
+                            No
+                        </label>
+
+                    </div>
+
+                </div>
             </fieldset>
 
             <button type="submit" id="submit-form-button">Add Book</button>

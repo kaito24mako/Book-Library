@@ -203,28 +203,48 @@ main {
     margin: 0 auto;
     gap: var(--spacing-vmedium);
 
+    font-family: var(--font-merri);
+    font-size: var(--size-medium);
+
     background-color: var(--color-lightBlack);
     border-radius: 10px;
     color: var(--color-vlightBrown);
 }
 
+/* text inputs */
 .input-group {
     display: flex;
     flex-direction: column;
-
-    font-family: var(--font-merri);
-    font-size: var(--size-medium);
 }
 input {
     border: none;
     outline: none;
     border-bottom: 2px solid var(--color-transWhite);
 }
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
     font-family: var(--font-default);
     color: var(--color-white);
 }
 
+/* radio inputs */
+.status-container {
+    border: none;
+    outline: none;
+}
+.status-flex-group {
+    display: flex;
+    justify-content: space-between;
+}
+.options-flex-group {
+    display: flex;
+    gap: var(--spacing-medium);
+}
+input[type="radio"] {
+    accent-color: orange;
+}
+
+/* dialog specifics */
 dialog {
     border: none;
     background: transparent;
@@ -239,15 +259,24 @@ dialog[open] {
 dialog::backdrop {
     background-color: var(--color-transWhite);
 }
-dialog button:first-child {
+
+/* button specifics */
+.form-container button:first-child {
     display: flex;
     justify-content: flex-end;
-    flex-grow: 0;
-
-    border: none;
     
-    font-size: var(--size-vlarge);
-    font-weight: bold;
+    border: none;
 }
+.form-container button:last-child {
+    margin: 0 auto;
+    padding: var(--spacing-small);
+
+    border: 2px solid var(--color-transWhite);
+    border-radius: 5px;
+}
+.form-container button:last-child:hover {
+    background-color: var(--color-hoverBlack);
+}
+
 
 
