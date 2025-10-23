@@ -2,6 +2,12 @@
 As instructed by The Odin Project, this library app will utilise the intermediate object and object constructor skills I've learned.
 
 ## Skills 
+**HTML and CSS**
+- Creating and styling a form 
+- Creating and styling a dialog - for elements that make others inactive!
+- Combining grid and flexbox
+- Using various selectors 
+
 **JavaScript**
 
 ## Credit
