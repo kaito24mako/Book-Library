@@ -6,7 +6,7 @@ function Book(title, author, pages, read) {
     this.title = title;
     this.author = `By ${author}`;
     this.pages = `${pages} pages`;
-    this.read = `Status: ${read}`;
+    this.read = `Finished reading: ${read}`;
     this.id = crypto.randomUUID();
 }
 
@@ -17,8 +17,8 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 }
 
-addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", "Not read yet");
-addBookToLibrary("1984", "George Orwell", "182", "Read");
+addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", "No");
+addBookToLibrary("1984", "George Orwell", "182", "Yes");
 
 /* Display books */
 
@@ -43,12 +43,8 @@ function getBook(array) {
         authorText.textContent = array[i].author;
         pagesText.textContent = array[i].pages;
         readText.textContent = array[i].read;
-        textGroup.appendChild(titleText);
-        textGroup.appendChild(authorText);
-        textGroup.appendChild(pagesText);
-        textGroup.appendChild(readText);
+        textGroup.append(titleText, authorText, pagesText, readText);
         
-
         const buttonsGroup = document.createElement("div");
         buttonsGroup.classList.add("card-buttons");
         newCard.appendChild(buttonsGroup);
@@ -57,8 +53,7 @@ function getBook(array) {
         const removeButton = document.createElement("button");
         statusButton.textContent = "Change Read Status";
         removeButton.textContent = "Remove Book";
-        buttonsGroup.appendChild(statusButton);
-        buttonsGroup.appendChild(removeButton);
+        buttonsGroup.append(statusButton, removeButton);
     }
 }
 
@@ -81,11 +76,22 @@ closeDialogButton.addEventListener("click", () => {
 
 /* Display the new book onto the webpage */
 
-const confirmButton = document.querySelector("#submit-form-button");
 const form = document.querySelector(".form-container");
-
+const titleInput = form.elements["title"];
+const authorInput = form.elements["author"];
+const pagesInput = form.elements["pages"];
+const readInput = form.elements["read-status"];
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    console.log("hi");
+    
+    /* add new book to array */
+    addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.value);
+
+    /* display the new book */
+    cardContainer.innerHTML = "";
+    getBook(myLibrary);
+
+    /* close form */
+    dialog.close();
 });
