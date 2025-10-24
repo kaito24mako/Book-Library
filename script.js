@@ -6,7 +6,7 @@ function Book(title, author, pages, read) {
     this.title = title;
     this.author = `By ${author}`;
     this.pages = `${pages} pages`;
-    this.read = `Finished reading: ${read}`;
+    this.read = `Status: ${read}`;
     this.id = crypto.randomUUID();
 }
 
@@ -17,8 +17,8 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 }
 
-addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", "No");
-addBookToLibrary("1984", "George Orwell", "182", "Yes");
+addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", "In Progress");
+addBookToLibrary("1984", "George Orwell", "182", "Completed");
 
 /* Display books */
 
@@ -76,6 +76,7 @@ closeDialogButton.addEventListener("click", () => {
 
 /* Display the new book onto the webpage */
 
+const submitButton = document.querySelector("#submit-form-button");
 const form = document.querySelector(".form-container");
 const titleInput = form.elements["title"];
 const authorInput = form.elements["author"];
@@ -85,13 +86,14 @@ const readInput = form.elements["read-status"];
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     
-    /* add new book to array */
+    /* add new book (using the values of the form inputs) to array */
     addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.value);
 
     /* display the new book */
     cardContainer.innerHTML = "";
     getBook(myLibrary);
 
-    /* close form */
+    /* close and reset form */
     dialog.close();
+    form.reset();
 });
