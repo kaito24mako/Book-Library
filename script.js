@@ -1,6 +1,20 @@
-/* Book constructor */
+/* Variables */
 
 let myLibrary = [];
+
+const cardContainer = document.querySelector(".card-container");
+
+const dialog = document.querySelector("dialog");
+const createBookButton = document.querySelector("#new-book-button");
+const closeDialogButton = document.querySelector("#close-dialog-button");
+
+const form = document.querySelector(".form-container");
+const titleInput = form.elements["title"];
+const authorInput = form.elements["author"];
+const pagesInput = form.elements["pages"];
+const readInput = form.elements["read-status"];
+
+/* Book constructor */
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -25,14 +39,12 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 }
 
-addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", "In Progress");
-addBookToLibrary("1984", "George Orwell", "182", "Completed");
-addBookToLibrary("The Alchemist", "Paulo Coelho", "136", "Completed");
-addBookToLibrary("The Chronicles of Narnia", "C.S. Lewis", "171", "In Progress");
+addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "310", "In Progress");
+addBookToLibrary("1984", "George Orwell", "336", "Completed");
+addBookToLibrary("The Alchemist", "Paulo Coelho", "208", "Completed");
+addBookToLibrary("War and Peace", "Leo Tolstoy", "1225", "In Progress");
 
 /* Display books */
-
-const cardContainer = document.querySelector(".card-container");
 
 function getBook(array) {
     for (let i = 0; i < myLibrary.length; i++) {
@@ -77,7 +89,6 @@ function getBook(array) {
 
         /* remove book */
         removeButton.addEventListener("click", () => {
-            //const removedBook = myLibrary.find(book => book.id === removeButton.dataset.id);
             myLibrary = myLibrary.filter(book => book.id !== removeButton.dataset.id);
             cardContainer.innerHTML = "";
             getBook(myLibrary);
@@ -89,12 +100,7 @@ getBook(myLibrary);
 
 /* Display the new book form */
 
-const dialog = document.querySelector("dialog");
-const createBookButton = document.querySelector("#new-book-button");
-const closeDialogButton = document.querySelector("#close-dialog-button");
-
 createBookButton.addEventListener("click", () => {
-    /* shows the dialog */
     dialog.showModal();
 });
 
@@ -103,14 +109,7 @@ closeDialogButton.addEventListener("click", () => {
     form.reset();
 });
 
-/* Display the new book onto the webpage */
-
-const submitButton = document.querySelector("#submit-form-button");
-const form = document.querySelector(".form-container");
-const titleInput = form.elements["title"];
-const authorInput = form.elements["author"];
-const pagesInput = form.elements["pages"];
-const readInput = form.elements["read-status"];
+/* Values of the form create and display a new book */
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -126,8 +125,6 @@ form.addEventListener("submit", (event) => {
     dialog.close();
     form.reset();
 });
-
-/* Remove book event */
 
 
 

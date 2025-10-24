@@ -96,14 +96,13 @@ main {
     margin-top: var(--spacing-large);
     padding: var(--spacing-medium);
 
-    gap: var(--spacing-vlarge);
+    gap: calc(var(--spacing-large) + 1em);
 
     background-color: var(--color-transBlack);
 }
 .header-container > h1 {
-    font-family: var(--font-dancing);
+    font-family: var(--font-merri);
     font-size: var(--size-header);
-    font-style: italic;
 }
 .header-container > button {
     padding: var(--spacing-small);
@@ -126,6 +125,7 @@ main {
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+    grid-template-rows: repeat(auto-fit, minmax(280px, 300px));
     justify-content: center;
 
     margin: var(--spacing-large);
@@ -210,6 +210,8 @@ main {
     background-color: var(--color-lightBlack);
     border-radius: 10px;
     color: var(--color-vlightBrown);
+
+    box-shadow: 4px 4px 20px rgba(20, 20, 20, 0.5);
 }
 
 /* text inputs */
@@ -249,6 +251,7 @@ input[type="radio"] {
 dialog {
     border: none;
     background: transparent;
+    overflow: visible;
 }
 dialog[open] {
     /* to perfectly center */
@@ -279,6 +282,14 @@ dialog::backdrop {
 }
 .form-container button:last-child:hover {
     background-color: var(--color-hoverBlack);
+}
+
+/* ==== MEDIA QUERIES ==== */
+@media (max-width: 1200px) {
+    .header-container {
+        flex-direction: column;
+        gap: var(--spacing-small);
+    }
 }
 
 
