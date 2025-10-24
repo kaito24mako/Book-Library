@@ -10,6 +10,14 @@ function Book(title, author, pages, read) {
     this.id = crypto.randomUUID();
 }
 
+Book.prototype.toggleReadStatus = function() {
+    if (this.read === "Status: Completed") {
+        this.read = "Status: In progress";
+    } else {
+        this.read = "Status: Completed";
+    };
+};
+
 /* Add new books to the library array */
 
 function addBookToLibrary(title, author, pages, read) {
@@ -27,6 +35,7 @@ const cardContainer = document.querySelector(".card-container");
 function getBook(array) {
     for (let i = 0; i < myLibrary.length; i++) {
 
+        /* create and append card elements */
         const newCard = document.createElement("div");
         newCard.classList.add("card");
         cardContainer.appendChild(newCard);
@@ -51,11 +60,19 @@ function getBook(array) {
 
         const statusButton = document.createElement("button");
         const removeButton = document.createElement("button");
+        statusButton.dataset.id = array[i].id;
         statusButton.textContent = "Change Read Status";
         removeButton.textContent = "Remove Book";
         buttonsGroup.append(statusButton, removeButton);
-    }
-}
+
+        /* change read status */
+        statusButton.addEventListener("click", () => {
+            const currentBook = myLibrary.find(book => book.id === statusButton.dataset.id);
+            currentBook.toggleReadStatus();
+            readText.textContent = currentBook.read;
+        })
+    };
+};
 
 getBook(myLibrary);
 
@@ -72,6 +89,7 @@ createBookButton.addEventListener("click", () => {
 
 closeDialogButton.addEventListener("click", () => {
     dialog.close();
+    form.reset();
 });
 
 /* Display the new book onto the webpage */
@@ -97,3 +115,9 @@ form.addEventListener("submit", (event) => {
     dialog.close();
     form.reset();
 });
+
+
+
+
+
+
