@@ -64,11 +64,11 @@ function getBook(array) {
 
 getBook(myLibrary);
 
-/* Create and display new books */
+/* Display the new book form */
 
 const dialog = document.querySelector("dialog");
-const createBookButton = document.querySelector(".header-container button");
-const closeDialogButton = document.querySelector("dialog > button");
+const createBookButton = document.querySelector("#new-book-button");
+const closeDialogButton = document.querySelector("#close-dialog-button");
 
 createBookButton.addEventListener("click", () => {
     /* shows the dialog */
@@ -79,3 +79,13 @@ closeDialogButton.addEventListener("click", () => {
     dialog.close();
 });
 
+/* Display the new book onto the webpage */
+
+const confirmButton = document.querySelector("#submit-form-button");
+const form = document.querySelector(".form-container");
+
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log("hi");
+});
