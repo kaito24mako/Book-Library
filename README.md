@@ -3,14 +3,18 @@ As instructed by The Odin Project, this library app will utilise the intermediat
 
 ## Skills 
 **HTML and CSS**
-- Creating and styling a form 
-- Creating and styling a dialog - for elements that make others inactive!
+- Creating and styling form 
+- Creating and styling dialog - for elements that make others inactive!
 - Combining grid and flexbox
 - Using various selectors 
 
 **JavaScript**
-- Using id's to find certain items in an array (rather than using index)
+- Creating objects and object constructors 
+- Looping over objects 
 - Linking prototypes to localise functions 
+- Using id's to find certain items in an array (rather than using index)
+- Opening, closing, and resetting dialog 
+
 
 
 ## Credit
