@@ -1,6 +1,6 @@
 /* Book constructor */
 
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -8,11 +8,11 @@ function Book(title, author, pages, read) {
     this.pages = `${pages} pages`;
     this.read = `Status: ${read}`;
     this.id = crypto.randomUUID();
-}
+};
 
 Book.prototype.toggleReadStatus = function() {
     if (this.read === "Status: Completed") {
-        this.read = "Status: In progress";
+        this.read = "Status: In Progress";
     } else {
         this.read = "Status: Completed";
     };
@@ -27,6 +27,8 @@ function addBookToLibrary(title, author, pages, read) {
 
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", "In Progress");
 addBookToLibrary("1984", "George Orwell", "182", "Completed");
+addBookToLibrary("The Alchemist", "Paulo Coelho", "136", "Completed");
+addBookToLibrary("The Chronicles of Narnia", "C.S. Lewis", "171", "In Progress");
 
 /* Display books */
 
@@ -61,6 +63,7 @@ function getBook(array) {
         const statusButton = document.createElement("button");
         const removeButton = document.createElement("button");
         statusButton.dataset.id = array[i].id;
+        removeButton.dataset.id = array[i].id;
         statusButton.textContent = "Change Read Status";
         removeButton.textContent = "Remove Book";
         buttonsGroup.append(statusButton, removeButton);
@@ -70,7 +73,15 @@ function getBook(array) {
             const currentBook = myLibrary.find(book => book.id === statusButton.dataset.id);
             currentBook.toggleReadStatus();
             readText.textContent = currentBook.read;
-        })
+        });
+
+        /* remove book */
+        removeButton.addEventListener("click", () => {
+            //const removedBook = myLibrary.find(book => book.id === removeButton.dataset.id);
+            myLibrary = myLibrary.filter(book => book.id !== removeButton.dataset.id);
+            cardContainer.innerHTML = "";
+            getBook(myLibrary);
+        });
     };
 };
 
@@ -115,6 +126,9 @@ form.addEventListener("submit", (event) => {
     dialog.close();
     form.reset();
 });
+
+/* Remove book event */
+
 
 
 
