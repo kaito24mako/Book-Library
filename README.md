@@ -1,5 +1,5 @@
 # 📚 Book Library
-As instructed by The Odin Project, this library app will utilise the intermediate object and object constructor skills I've learned.
+As instructed by The Odin Project, this library app will utilise the intermediate object and object constructor skills I've learned!
 
 ## ⚙️ Skills 
 **HTML and CSS**
