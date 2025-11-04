@@ -1,16 +1,15 @@
-const libraryApp = (() => {
+const LibraryApp = (() => {
 
     /* ==== Variables ==== */
 
     let myLibrary = [];
 
     const cardContainer = document.querySelector(".card-container");
-
     const dialog = document.querySelector("dialog");
+    const form = document.querySelector(".form-container");
     const createBookButton = document.querySelector("#new-book-button");
     const closeDialogButton = document.querySelector("#close-dialog-button");
 
-    const form = document.querySelector(".form-container");
     const titleInput = form.elements["title"];
     const authorInput = form.elements["author"];
     const pagesInput = form.elements["pages"];
@@ -42,7 +41,7 @@ const libraryApp = (() => {
     function displayBook(array) {
         for (let i = 0; i < myLibrary.length; i++) {
 
-            /* create and append card elements */
+            // create and append card elements 
             const newCard = document.createElement("div");
             newCard.classList.add("card");
             cardContainer.appendChild(newCard);
@@ -73,14 +72,14 @@ const libraryApp = (() => {
             removeButton.textContent = "Remove Book";
             buttonsGroup.append(statusButton, removeButton);
 
-            /* change read status */
+            // change read status 
             statusButton.addEventListener("click", () => {
                 const currentBook = myLibrary.find(book => book.id === statusButton.dataset.id);
                 currentBook.toggleReadStatus();
                 readText.textContent = currentBook.read;
             });
 
-            /* remove book */
+            // remove book 
             removeButton.addEventListener("click", () => {
                 myLibrary = myLibrary.filter(book => book.id !== removeButton.dataset.id);
                 cardContainer.innerHTML = "";
@@ -104,14 +103,14 @@ const libraryApp = (() => {
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             
-            /* add new book to array */
+            // add new book to array 
             addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.value);
 
-            /* display the new book */
+            // display the new book 
             cardContainer.innerHTML = "";
             displayBook(myLibrary);
 
-            /* close and reset form */
+            // close and reset form 
             dialog.close();
             form.reset();
         });
@@ -133,7 +132,7 @@ const libraryApp = (() => {
 
 })()
 
-libraryApp.init();
+LibraryApp.init();
 
 
 
