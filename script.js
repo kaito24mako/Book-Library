@@ -116,7 +116,6 @@ form.addEventListener("submit", (event) => {
     
     /* add new book (using the values of the form inputs) to array */
     addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.value);
-
     /* display the new book */
     cardContainer.innerHTML = "";
     getBook(myLibrary);
@@ -125,7 +124,6 @@ form.addEventListener("submit", (event) => {
     dialog.close();
     form.reset();
 });
-
 
 
 
