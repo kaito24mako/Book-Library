@@ -1,4 +1,4 @@
-const LibraryApp = (() => {
+const libraryApp = (() => {
 
     /* ==== Variables ==== */
 
@@ -15,18 +15,19 @@ const LibraryApp = (() => {
     const pagesInput = form.elements["pages"];
     const readInput = form.elements["read-status"];
 
-    /* ==== Book Constructor ==== */
+    /* ==== Book Class ==== */
 
-    function Book(title, author, pages, read) {
-        this.title = title;
-        this.author = `By ${author}`;
-        this.pages = `${pages} pages`;
-        this.read = `Status: ${read}`;
-        this.id = crypto.randomUUID();
-    }
-
-    Book.prototype.toggleReadStatus = function() {
-        this.read = this.read === "Status: Completed" ? "Status: In Progress" : "Status: Completed";
+    class Book {
+        constructor(title, author, pages, read) {
+            this.title = title;
+            this.author = `By ${author}`;
+            this.pages = `${pages} pages`;
+            this.read = `Status: ${read}`;
+            this.id = crypto.randomUUID();
+        };
+        toggleReadStatus() {
+            this.read = this.read === "Status: Completed" ? "Status: In Progress" : "Status: Completed";
+        };
     }
 
     /* ==== Add Books to Library Array ==== */
@@ -39,7 +40,7 @@ const LibraryApp = (() => {
     /* ==== Display Books ==== */
 
     function displayBook(array) {
-        for (let i = 0; i < myLibrary.length; i++) {
+        for (let i = 0; i < array.length; i++) {
 
             // create and append card elements 
             const newCard = document.createElement("div");
@@ -132,7 +133,7 @@ const LibraryApp = (() => {
 
 })()
 
-LibraryApp.init();
+libraryApp.init();
 
 
 
