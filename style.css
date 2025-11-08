@@ -85,7 +85,7 @@ body {
 /* ==== HEADER ==== */
 
 main {
-    /* to keep footer at the bottom of the page */
+    /*  to keep footer at the bottom of the page */
     flex: 1;
 }
 .header-container {
@@ -291,6 +291,8 @@ dialog::backdrop {
         gap: var(--spacing-small);
     }
 }
+
+
 
 
 
