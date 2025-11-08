@@ -3,15 +3,6 @@
 let myLibrary = [];
 
 const cardContainer = document.querySelector(".card-container");
-const dialog = document.querySelector("dialog");
-const form = document.querySelector(".form-container");
-const createBookButton = document.querySelector("#new-book-button");
-const closeDialogButton = document.querySelector("#close-dialog-button");
-
-const titleInput = form.elements["title"];
-const authorInput = form.elements["author"];
-const pagesInput = form.elements["pages"];
-const readInput = form.elements["read-status"];
 
 /* ==== Book class ==== */
 
@@ -87,9 +78,14 @@ function displayBook(array) {
     }
 }
 
-/* ==== Event listeners ==== */
+/* ==== Display new book form ==== */
 
-function initEventListeners() {
+function displayForm() {
+    const dialog = document.querySelector("dialog");
+    const form = document.querySelector(".form-container");
+    const createBookButton = document.querySelector("#new-book-button");
+    const closeDialogButton = document.querySelector("#close-dialog-button");
+
     createBookButton.addEventListener("click", () => {
         dialog.showModal();
     })
@@ -100,6 +96,11 @@ function initEventListeners() {
     })
 
     form.addEventListener("submit", (event) => {
+        const titleInput = form.elements["title"];
+        const authorInput = form.elements["author"];
+        const pagesInput = form.elements["pages"];
+        const readInput = form.elements["read-status"];
+
         event.preventDefault();
         
         // add new book to array 
@@ -117,17 +118,17 @@ function initEventListeners() {
 
 /* ==== Inititalise website ==== */
 
-function init() {
+function startApp() {
     addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "310", "In Progress");
     addBookToLibrary("1984", "George Orwell", "336", "Completed");
     addBookToLibrary("The Alchemist", "Paulo Coelho", "208", "Completed");
     addBookToLibrary("War and Peace", "Leo Tolstoy", "1225", "In Progress");
 
     displayBook(myLibrary);
-    initEventListeners();
+    displayForm();
 }
 
-init();
+startApp();
 
 
 
